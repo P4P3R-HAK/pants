@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        #toggle-switch {
+            position: relative;
+            width: 80px;
+            height: 40px;
+            background-color: #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #toggle-switch::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 36px;
+            height: 36px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        #toggle-switch.on {
+            background-color: #4CAF50;
+        }
+        #toggle-switch.on::before {
+            transform: translateX(40px);
+        }
+        #toggle-label {
+            margin-left: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        #report-button {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        #report-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phishing Detector</h1>
+    <div id="toggle-container">
+        <div id="toggle-switch"></div>
+        <span id="toggle-label">Disabled</span>
+    </div>
+    <button id="report-button">Report Phishing</button>
+    <script src="popup.js"></script>
+</body>
+</html>
