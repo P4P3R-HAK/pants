@@ -1,12 +1,10 @@
-chrome.storage.sync.get(['enabled'], function (result) {
+chrome.storage.sync.get(['enabled'], (result) => {
     if (result.enabled) {
-        document.addEventListener('DOMContentLoaded', function () {
-            const pageText = document.body.innerText || "(No text content available)";
-            alert(pageText);
-
-            if (pageText.toLowerCase().includes("phishing") || pageText.toLowerCase().includes("illegal")) {
-                alert("This page might be suspicious. Please be careful!");
-            }
-        });
+      const currentUrl = window.location.href;
+      const pageHtml = document.documentElement.outerHTML; // 페이지의 전체 HTML을 가져옴
+  
+      // 현재 URL과 HTML을 background 스크립트로 전송하여 검사를 요청
+      chrome.runtime.sendMessage({ type: 'checkUrlAndHtml', url: currentUrl, html: pageHtml });
     }
-});
+  });
+  
