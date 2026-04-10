@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>불법 사이트 탐지기</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="popup-body">
+    <main class="popup-shell">
+      <section class="hero-card">
+        <p class="eyebrow">불법 사이트 탐지기</p>
+        <h1>실시간 의심 사이트 탐지</h1>
+        <div class="site-row">
+          <span id="current-host" class="site-host">현재 사이트 정보를 불러오는 중...</span>
+          <span id="scan-badge" class="status-badge muted">대기 중</span>
+        </div>
+        <p id="scan-summary" class="muted-copy">이 탭의 최근 검사 결과를 불러오고 있습니다.</p>
+      </section>
+
+      <section class="panel-card">
+        <div class="panel-head">
+          <div>
+            <p class="panel-label">보호 상태</p>
+            <h2>실시간 차단</h2>
+          </div>
+          <label class="toggle">
+            <input id="enabled-toggle" type="checkbox">
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+
+        <div class="range-row">
+          <div>
+            <p class="panel-label">차단 기준</p>
+            <strong id="threshold-value">60%</strong>
+          </div>
+          <input id="threshold" type="range" min="0" max="100" step="1">
+        </div>
+      </section>
+
+      <section class="panel-card action-grid">
+        <button id="trust-button" class="action-button secondary" type="button">현재 사이트 신뢰</button>
+        <button id="rescan-button" class="action-button primary" type="button">새로고침 후 재검사</button>
+        <button id="dashboard-button" class="action-button tertiary" type="button">보안 대시보드</button>
+      </section>
+
+      <section class="panel-card meta-card">
+        <p class="panel-label">원격 보호 상태</p>
+        <p id="api-endpoint" class="endpoint-text"></p>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

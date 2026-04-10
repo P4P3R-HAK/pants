@@ -1,0 +1,56 @@
+{
+  "urlIndicators": [
+    {
+      "pattern": "phish|spoof|fake[-_]?login|credential",
+      "score": 35,
+      "description": "URL에서 피싱 또는 가짜 로그인 관련 키워드가 감지되었습니다."
+    },
+    {
+      "pattern": "malware|trojan|ransom|stealer|virus",
+      "score": 40,
+      "description": "URL에서 악성코드 유포 관련 키워드가 감지되었습니다."
+    },
+    {
+      "pattern": "torrent|warez|crack|keygen|serial",
+      "score": 30,
+      "description": "URL에서 불법 다운로드 또는 크랙 배포 관련 키워드가 감지되었습니다."
+    },
+    {
+      "pattern": "casino|gambling|bet|toto|\\bslot\\b",
+      "score": 28,
+      "description": "URL에서 도박 또는 사행성 관련 키워드가 감지되었습니다."
+    },
+    {
+      "pattern": "adult|porn|sexcam",
+      "score": 24,
+      "description": "URL에서 성인물 관련 키워드가 감지되었습니다."
+    }
+  ],
+  "htmlIndicators": [
+    {
+      "pattern": "wallet\\s*connect|seed phrase|recovery phrase|mnemonic phrase",
+      "score": 24,
+      "description": "페이지 HTML에서 지갑 연결 또는 시드 문구 탈취 패턴이 감지되었습니다."
+    },
+    {
+      "pattern": "urgent verification|verify your account|confirm identity|account suspended",
+      "score": 18,
+      "description": "페이지 HTML에서 사회공학성 계정 확인 문구가 감지되었습니다."
+    },
+    {
+      "pattern": "disable antivirus|turn off defender|windows defender.*off",
+      "score": 34,
+      "description": "페이지 HTML에서 보안 기능 비활성화 유도 문구가 감지되었습니다."
+    },
+    {
+      "pattern": "crack download|serial key|key generator|license bypass",
+      "score": 24,
+      "description": "페이지 HTML에서 크랙 또는 우회 설치 관련 문구가 감지되었습니다."
+    },
+    {
+      "pattern": "scam|fake support|claim reward|free gift",
+      "score": 26,
+      "description": "페이지 HTML에서 사기성 유도 문구가 감지되었습니다."
+    }
+  ]
+}

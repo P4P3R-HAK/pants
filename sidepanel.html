@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보안 대시보드</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body class="dashboard-body">
+    <main class="dashboard-shell">
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow">실시간 보안 대시보드</p>
+          <h1>현재 탭 상태와 최근 탐지 흐름을 한눈에 확인합니다.</h1>
+          <p id="hero-detail" class="hero-copy">현재 탭 정보를 불러오는 중입니다.</p>
+        </div>
+        <div class="hero-actions">
+          <button id="refresh-dashboard" class="ghost-button" type="button">새로고침</button>
+          <button id="reload-tab" class="primary-button" type="button">현재 탭 재검사</button>
+        </div>
+      </section>
+
+      <section class="current-grid">
+        <article class="panel-card spotlight-card">
+          <div class="panel-head">
+            <div>
+              <p class="section-label">현재 탭</p>
+              <h2 id="current-host">검사 대기 중</h2>
+            </div>
+            <span id="current-status" class="status-pill muted">대기 중</span>
+          </div>
+
+          <p id="current-summary" class="panel-copy">최근 검사 결과를 준비하고 있습니다.</p>
+
+          <div class="score-panel">
+            <div class="score-head">
+              <span>위험 점수</span>
+              <strong id="current-score">0%</strong>
+            </div>
+            <div class="score-track">
+              <div id="score-fill" class="score-fill"></div>
+            </div>
+            <p id="current-threshold" class="sub-copy">차단 기준 60%</p>
+          </div>
+
+          <div class="card-actions">
+            <button id="toggle-trust" class="secondary-button" type="button">현재 사이트 신뢰</button>
+            <button id="toggle-session" class="ghost-button" type="button">세션 허용</button>
+          </div>
+
+          <ul id="reason-list" class="reason-list">
+            <li>탐지 근거를 불러오는 중입니다.</li>
+          </ul>
+        </article>
+
+        <article class="panel-card stats-card">
+          <div class="panel-head">
+            <div>
+              <p class="section-label">요약</p>
+              <h2>탐지 지표</h2>
+            </div>
+          </div>
+
+          <div id="stats-grid" class="stats-grid"></div>
+
+          <div class="remote-box">
+            <p class="section-label">원격 보호 상태</p>
+            <strong id="remote-mode">로컬 규칙</strong>
+            <p id="remote-detail" class="panel-copy">원격 보호 상태를 불러오는 중입니다.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel-card history-card">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">최근 활동</p>
+            <h2>검사 기록</h2>
+          </div>
+          <button id="clear-history" class="ghost-button" type="button">기록 비우기</button>
+        </div>
+
+        <ul id="history-list" class="history-list">
+          <li class="empty-state">기록을 불러오는 중입니다.</li>
+        </ul>
+      </section>
+
+      <section class="domain-grid">
+        <article class="panel-card">
+          <div class="panel-head">
+            <div>
+              <p class="section-label">영구 허용</p>
+              <h2>신뢰 사이트</h2>
+            </div>
+            <span id="trusted-count" class="count-pill">0개</span>
+          </div>
+
+          <ul id="trusted-list" class="domain-list">
+            <li class="empty-state">등록된 사이트가 없습니다.</li>
+          </ul>
+        </article>
+
+        <article class="panel-card">
+          <div class="panel-head">
+            <div>
+              <p class="section-label">이번 브라우저 세션</p>
+              <h2>임시 허용</h2>
+            </div>
+            <button id="clear-session" class="ghost-button" type="button">전체 해제</button>
+          </div>
+
+          <ul id="session-list" class="domain-list">
+            <li class="empty-state">임시 허용된 사이트가 없습니다.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

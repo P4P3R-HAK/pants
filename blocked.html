@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>접속 차단됨</title>
+    <link rel="stylesheet" href="blocked.css">
+  </head>
+  <body>
+    <main class="blocked-shell">
+      <section class="blocked-card">
+        <p class="eyebrow">불법 사이트 탐지기</p>
+        <h1>이 사이트 접속을 차단했습니다.</h1>
+        <p class="lead">분석된 위험 점수가 설정한 차단 기준을 넘었습니다. 아래 이유를 확인한 뒤 다음 동작을 선택하세요.</p>
+
+        <div class="meter-wrap">
+          <div class="meter-head">
+            <span>위험 점수</span>
+            <strong id="score-text">0%</strong>
+          </div>
+          <div class="meter-bar">
+            <div id="score-fill" class="meter-fill"></div>
+          </div>
+          <p id="threshold-text" class="subtle"></p>
+        </div>
+
+        <dl class="meta-grid">
+          <div>
+            <dt>도메인</dt>
+            <dd id="host-text">-</dd>
+          </div>
+          <div>
+            <dt>판별 방식</dt>
+            <dd id="source-text">-</dd>
+          </div>
+        </dl>
+
+        <section class="reason-box">
+          <h2>탐지 근거</h2>
+          <ul id="reason-list">
+            <li>탐지 근거를 불러오는 중입니다...</li>
+          </ul>
+        </section>
+
+        <div class="action-row">
+          <button id="back-button" class="ghost" type="button">뒤로 가기</button>
+          <button id="allow-once-button" class="secondary" type="button">이번만 허용</button>
+          <button id="trust-button" class="primary" type="button">항상 신뢰</button>
+        </div>
+
+        <p id="url-text" class="subtle"></p>
+      </section>
+    </main>
+
+    <script src="blocked.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "\ubd88\ubc95 \uc0ac\uc774\ud2b8 \ud0d0\uc9c0\uae30",
+  "version": "1.2.0",
+  "description": "\uc6d0\uaca9 \ubd84\ub958\uae30\uc640 \ub85c\uceec \uaddc\uce59\uc744 \ud568\uaed8 \uc0ac\uc6a9\ud574 \uc758\uc2ec \uc0ac\uc774\ud2b8\ub97c \ud0d0\uc9c0\ud558\uace0 \ucc28\ub2e8\ud569\ub2c8\ub2e4.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "sidePanel"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "\ubd88\ubc95 \uc0ac\uc774\ud2b8 \ud0d0\uc9c0\uae30",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
